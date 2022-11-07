@@ -114,15 +114,15 @@ def melody(chrd_arr,arraylength,Sent):
     for sent in range(Sent):
         r=0
         if sent==0:
-            r=random.randint(2,5)
+            r=random.randint(3,5)
         elif sent==1:
-            r=random.randint(2,5)
+            r=random.randint(3,5)
         elif sent==2:
-            r=random.randint(2,5)
+            r=random.randint(3,5)
         elif sent==3:
-            r=random.randint(2,5)
+            r=random.randint(3,5)
         elif sent==4:
-            r=random.randint(2,5)
+            r=random.randint(3,5)
 
         #outputbeats=[""]*100
         num= -77777777
@@ -166,7 +166,7 @@ def display(chrd_arr,arraylength, Sent):
 
 
 if __name__ == '__main__':
-    chrd_arr = [ "f","g","em","am","dm","g","c","c"]
+    chrd_arr = [ "c","g","am","em","f","c","dm","g"]
     length =len(chrd_arr)
     
     display(chrd_arr, length,5)

@@ -197,7 +197,7 @@ def display(chrd_arr,arraylength, Sent):
 
 
 if __name__ == '__main__':
-    chrd_arr = [ "f","g","em","am","dm","g","c","c"]
+    chrd_arr = [ "c","g","am","em","f","c","dm","g"]
     length =len(chrd_arr)
     
     display(chrd_arr, length,5)
