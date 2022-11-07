@@ -12,7 +12,7 @@ chord_em = [ "e'","f'", "g'", "b'","d'" ,"rand" ]
 
 '''
 chord_c = [ "c'", "e'", "g'"]
-chord_f = [ "c'", "f'", "a'" ]
+chord_f = [ "d'", "f'", "a'" ]
 chord_g = [ "d'","g'","b'" ]
 chord_e = [ "e'","gis'", "b'" ]
 
