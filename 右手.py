@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 14 13:15:39 2021
-
-@author: User
-"""
 import numpy as np
 import random
 
@@ -120,21 +114,21 @@ def melody(chrd_arr,arraylength,Sent):
     for sent in range(Sent):
         r=0
         if sent==0:
-            r=random.randint(5,6)
+            r=random.randint(2,4)
         elif sent==1:
-            r=random.randint(6,7)
+            r=random.randint(2,4)
         elif sent==2:
-            r=random.randint(3,4)
+            r=random.randint(2,4)
         elif sent==3:
-            r=random.randint(6,7)
+            r=random.randint(2,4)
         elif sent==4:
-            r=random.randint(3,4)
+            r=random.randint(2,4)
 
         #outputbeats=[""]*100
         num= -77777777
         
         while num == -77777777:
-            num,outputbeats = randomBeats(4, 5, r)  #總拍子數    幾分音符    輸出幾個beats    OutputBeats[]
+            num,outputbeats = randomBeats(4, 4, r)  #總拍子數    幾分音符    輸出幾個beats    OutputBeats[]
             
         for bar in range(arraylength):
             note_n = num
@@ -178,4 +172,3 @@ if __name__ == '__main__':
     display(chrd_arr, length,5)
     
 #a,b=randomBeats(4,6,8)  # 總拍子數    幾分音符    輸出幾個beats    
-            
