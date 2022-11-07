@@ -1,24 +1,14 @@
 import numpy as np
 import random
-'''
-chord_c = [ "c'","d'", "e'", "g'","bis'","rand"]
-chord_f = [ "f'","g'", "a'", "c'","e'" ,"rand" ]
-chord_g = [ "g'","a'", "b'", "d'","f'" ,"rand" ]
-chord_e = [ "e'","aes'", "b'", "d'" , "f'" ,"rand" ]
 
-chord_am = [ "a'","b'", "c'", "e'","g'"  ,"rand" ]
-chord_dm = [ "d'","e'", "f'", "a'","c'"  ,"rand" ]
-chord_em = [ "e'","f'", "g'", "b'","d'" ,"rand" ]
+chord_c = [ "c'", "e'", "g'","a'"]
+chord_f = [ "d'", "f'", "a'" ,"b'"]
+chord_g = [ "d'","g'","b'" ,"c''"]
+chord_e = [ "e'","gis'", "b'" ,"d\'\'"]
 
-'''
-chord_c = [ "c'", "e'", "g'"]
-chord_f = [ "d'", "f'", "a'" ]
-chord_g = [ "d'","g'","b'" ]
-chord_e = [ "e'","gis'", "b'" ]
-
-chord_am = [ "c'",  "e'","a'" ]
-chord_dm = [ "d'", "f'", "a'" ]
-chord_em = [ "e'", "g'", "b'" ]
+chord_am = [ "c'", "e'","a'","c\'\'" ]
+chord_dm = [ "d'", "f'", "a'" ,"d\'\'"]
+chord_em = [ "e'", "g'", "b'" ,"e\'\'"]
 
 
 
@@ -162,7 +152,9 @@ def melody(chrd_arr,arraylength,Sent):
         
         chordarr=[0]*100
         for I in range(100):
-            chordarr[I] =random.randint(0,3)
+            chordarr[I] =random.randint(0,5)
+        #print(chordarr)
+            
         
         
         for bar in range(arraylength):

@@ -9,14 +9,15 @@ Created on Mon Nov  7 15:26:29 2022
 import numpy as np
 import random
 
-chord_c = [ "c", "e", "g"]
-chord_f = [ "d", "f", "a" ]
-chord_g = [ "d","g","b" ]
-chord_e = [ "e","gis", "b" ]
 
-chord_am = [ "c",  "e","a" ]
-chord_dm = [ "d", "f", "a" ]
-chord_em = [ "e", "g", "b" ]
+chord_c = [ "c", "e", "g","a"]
+chord_f = [ "d", "f", "a" ,"b'"]
+chord_g = [ "d","g","b" ,"c'"]
+chord_e = [ "e","gis", "b" ,"d'"]
+
+chord_am = [ "c",  "e","a","c'" ]
+chord_dm = [ "d", "f", "a" ,"d'"]
+chord_em = [ "e", "g", "b" ,"e'"]
 
 
 def mutiNote(chord,num):
@@ -159,7 +160,7 @@ def melody(chrd_arr,arraylength,Sent):
         
         chordarr=[0]*100
         for I in range(100):
-            chordarr[I] =random.randint(0,3)
+            chordarr[I] =random.randint(0,5)
         
         
         for bar in range(arraylength):
