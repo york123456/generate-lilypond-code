@@ -1,6 +1,6 @@
 import numpy as np
 import random
-
+'''
 chord_c = [ "c'","d'", "e'", "g'","bis'","rand"]
 chord_f = [ "f'","g'", "a'", "c'","e'" ,"rand" ]
 chord_g = [ "g'","a'", "b'", "d'","f'" ,"rand" ]
@@ -10,6 +10,33 @@ chord_am = [ "a'","b'", "c'", "e'","g'"  ,"rand" ]
 chord_dm = [ "d'","e'", "f'", "a'","c'"  ,"rand" ]
 chord_em = [ "e'","f'", "g'", "b'","d'" ,"rand" ]
 
+'''
+chord_c = [ "c'", "e'", "g'"]
+chord_f = [ "c'", "f'", "a'" ]
+chord_g = [ "d'","g'","b'" ]
+chord_e = [ "e'","gis'", "b'" ]
+
+chord_am = [ "c'",  "e'","a'" ]
+chord_dm = [ "d'", "f'", "a'" ]
+chord_em = [ "e'", "g'", "b'" ]
+
+
+
+def mutiNote(chord,num):
+    if num==0:
+        return chord[0]
+    elif num==1:
+        return chord[1]
+    elif num==2:
+        return chord[2]
+    elif num==3:
+        return "<"+chord[0]+" "+ chord[1]+">"
+    elif num==4:
+        return "<" + chord[0] + " " + chord[2] +">"
+    elif num==5:
+        return "<" + chord[1] + " " + chord[2] +">"
+    elif num==6:
+        return "<" + chord[0] + " " + chord[1] +" " + chord[2] +">"
 
 def randomBeats( totalbeat, QuarterNote, TheAmountOfOutputBeats):
     nrandom=0
@@ -33,7 +60,7 @@ def randomBeats( totalbeat, QuarterNote, TheAmountOfOutputBeats):
         while 1:
             if num > TheAmountOfOutputBeats:
                 break
-            nrandom = random.randint(0,QuarterNote) 
+            nrandom = random.randint(1,QuarterNote) 
             beatssec = arr[nrandom]
             
             if nsum + beatssec <= totalbeat:
@@ -73,19 +100,19 @@ def randomBeats( totalbeat, QuarterNote, TheAmountOfOutputBeats):
 
 def Chord(str,number):
     if   str=="c":
-        return chord_c[number]
+        return mutiNote(chord_c,number)
     elif str=="f":
-        return chord_f[number]
+        return mutiNote(chord_f,number)
     elif str=="g":
-        return chord_g[number]
+        return mutiNote(chord_g,number)
     elif str=="am":
-        return chord_am[number]
+        return mutiNote(chord_am,number)
     elif str=="dm":
-        return chord_dm[number]
+        return mutiNote(chord_dm,number)
     elif str=="em":
-        return chord_em[number]
+        return mutiNote(chord_em,number)
     elif str=="e":
-        return chord_e[number]
+        return mutiNote(chord_e,number)
     return "exit"
 
 
@@ -113,44 +140,53 @@ def melody(chrd_arr,arraylength,Sent):
     
     for sent in range(Sent):
         r=0
+        r=random.randint(3,6)
+        '''
         if sent==0:
-            r=random.randint(3,5)
+            r=random.randint(2,3)
         elif sent==1:
-            r=random.randint(3,5)
+            r=random.randint(2,3)
         elif sent==2:
-            r=random.randint(3,5)
+            r=random.randint(2,3)
         elif sent==3:
-            r=random.randint(3,5)
+            r=random.randint(2,3)
         elif sent==4:
-            r=random.randint(3,5)
-
+            r=random.randint(2,3)
+'''
         #outputbeats=[""]*100
         num= -77777777
         
         while num == -77777777:
             num,outputbeats = randomBeats(4, 4, r)  #總拍子數    幾分音符    輸出幾個beats    OutputBeats[]
-            
+        
+        
+        chordarr=[0]*100
+        for I in range(100):
+            chordarr[I] =random.randint(0,3)
+        
+        
         for bar in range(arraylength):
             note_n = num
             for note in range(note_n):
                 
-                Chordstr= Chord(chrd_arr[bar], random.randint(0,5) )
+                print(Chord(chrd_arr[bar], chordarr[note]),end="")
+                #Chordstr= Chord(chrd_arr[bar], random.randint(0,5) )
                 
-                if Chordstr=="rand":
-                    arr=sort(4)
-                    print("<",end="")
+                #if Chordstr=="rand":
+                    #arr=sort(4)
+                    #print("<",end="")
                     
-                    for i in range(random.randint(1,4)):
-                        print(Chord(chrd_arr[bar], arr[i ])," ",end="")
-                    print(">",end="")
-                else:
-                    print(Chordstr,end="")
+                    #for note in range(note_n):
+                        #print(Chord(chrd_arr[bar], chordarr[note])," ",end="")
+                    #print(">",end="")
+                #else:
+                    #print(Chordstr,end="")
                 
                 print(outputbeats[note]," ",end="")
             print("\n",end="")
         print("\n\n",end="")
     
-    print("c''1",end="")
+    print("c1",end="")
     return 0
 
 
@@ -171,4 +207,4 @@ if __name__ == '__main__':
     
     display(chrd_arr, length,5)
     
-#a,b=randomBeats(4,6,8)  # 總拍子數    幾分音符    輸出幾個beats    
+#a,b=randomBeats(4,6,8)  # 總拍子數    幾分音符    輸出幾個beats 
