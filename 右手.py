@@ -114,15 +114,15 @@ def melody(chrd_arr,arraylength,Sent):
     for sent in range(Sent):
         r=0
         if sent==0:
-            r=random.randint(2,4)
+            r=random.randint(2,5)
         elif sent==1:
-            r=random.randint(2,4)
+            r=random.randint(2,5)
         elif sent==2:
-            r=random.randint(2,4)
+            r=random.randint(2,5)
         elif sent==3:
-            r=random.randint(2,4)
+            r=random.randint(2,5)
         elif sent==4:
-            r=random.randint(2,4)
+            r=random.randint(2,5)
 
         #outputbeats=[""]*100
         num= -77777777
